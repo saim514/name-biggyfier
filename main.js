@@ -11,7 +11,7 @@ function setup()
     canvas.position(550,160);
 
     posenet = ml5.poseNet(video, modelLoaded);
-    posenet.on('poses', gotPoses);
+    posenet.on('pose', gotPoses);
 }
 
 function modelLoaded()
@@ -34,6 +34,7 @@ function gotPoses(results)
 function draw()
 {
     background('#90A4AE');
+    document.getElementById("font_size").innerHTML = "Font size of the text will be = " + difference + " px";
     textSize(difference);
     fill('#84FFFF');
     text("Saim", 50, 400);
